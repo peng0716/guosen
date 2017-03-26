@@ -17,6 +17,13 @@ import 'moment/locale/zh-cn'
 moment.locale('zh-cn')
 window.moment = moment
 
+Vue.prototype.formatContent = aContent => {
+  if (! aContent) {
+    return 0
+  }
+  return aContent.toFixed(1)
+}
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
