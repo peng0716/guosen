@@ -17,10 +17,15 @@ import 'moment/locale/zh-cn'
 moment.locale('zh-cn')
 window.moment = moment
 
-Vue.prototype.formatContent = aContent => {
+Vue.prototype.formatContent = (aContent, aIsPercentage) => {
   if (! aContent) {
     return 0
   }
+
+  if (aIsPercentage) {
+    aContent *= 100
+  }
+
   return aContent.toFixed(1)
 }
 

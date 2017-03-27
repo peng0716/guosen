@@ -89,98 +89,98 @@
               <td v-if="showWeek">{{ formatContent(agencyDataOfShenZhen.baoFei.car.currentWeekOfShouRu) }}</td>
               <td>{{ formatContent(agencyDataOfShenZhen.baoFei.car.currentYearOfShouRu) }}</td>
               <td>{{ formatContent(agencyDataOfShenZhen.baoFei.car.currentYearOfShouRu / currentDayOfYear) }}</td>
-              <td :class="timeProgressRateColor(agencyDataOfShenZhen.baoFei.car.timeProgressRate)">{{ formatContent(agencyDataOfShenZhen.baoFei.car.timeProgressRate) }}%</td>
+              <td :class="timeProgressRateColor(agencyDataOfShenZhen.baoFei.car.timeProgressRate)">{{ formatContent(agencyDataOfShenZhen.baoFei.car.timeProgressRate, true) }}%</td>
             </tr>
             <tr class="bg-color-2">
               <td v-if="!showWeek">{{ formatContent(agencyDataOfShenZhen.baoFei.noCar.currentDayOfShouRu) }}</td>
               <td v-if="showWeek">{{ formatContent(agencyDataOfShenZhen.baoFei.noCar.currentWeekOfShouRu) }}</td>
               <td>{{ formatContent(agencyDataOfShenZhen.baoFei.noCar.currentYearOfShouRu) }}</td>
               <td>{{ formatContent(agencyDataOfShenZhen.baoFei.noCar.currentYearOfShouRu / currentDayOfYear) }}</td>
-              <td :class="timeProgressRateColor(agencyDataOfShenZhen.baoFei.noCar.timeProgressRate)">{{ formatContent(agencyDataOfShenZhen.baoFei.noCar.timeProgressRate) }}%</td>
+              <td :class="timeProgressRateColor(agencyDataOfShenZhen.baoFei.noCar.timeProgressRate)">{{ formatContent(agencyDataOfShenZhen.baoFei.noCar.timeProgressRate, true) }}%</td>
             </tr>
             <tr>
               <td v-if="!showWeek">{{ formatContent(agencyDataOfShenZhen.baoFei.online.currentDayOfShouRu) }}</td>
               <td v-if="showWeek">{{ formatContent(agencyDataOfShenZhen.baoFei.online.currentWeekOfShouRu) }}</td>
               <td>{{ formatContent(agencyDataOfShenZhen.baoFei.online.currentYearOfShouRu) }}</td>
               <td>{{ formatContent(agencyDataOfShenZhen.baoFei.online.currentYearOfShouRu / currentDayOfYear) }}</td>
-              <td :class="timeProgressRateColor(agencyDataOfShenZhen.baoFei.online.timeProgressRate)">{{ formatContent(agencyDataOfShenZhen.baoFei.online.timeProgressRate) }}%</td>
+              <td :class="timeProgressRateColor(agencyDataOfShenZhen.baoFei.online.timeProgressRate)">{{ formatContent(agencyDataOfShenZhen.baoFei.online.timeProgressRate, true) }}%</td>
             </tr>
             <tr class="bg-color-3 font-bold">
               <td v-if="!showWeek">{{ formatContent(agencyDataOfShenZhen.baoFei.subtotal.currentDayOfShouRu) }}</td>
               <td v-if="showWeek">{{ formatContent(agencyDataOfShenZhen.baoFei.subtotal.currentWeekOfShouRu) }}</td>
               <td>{{ formatContent(agencyDataOfShenZhen.baoFei.subtotal.currentYearOfShouRu) }}</td>
               <td>{{ formatContent(agencyDataOfShenZhen.baoFei.subtotal.currentYearOfShouRu / currentDayOfYear) }}</td>
-              <td :class="timeProgressRateColor(agencyDataOfShenZhen.baoFei.subtotal.timeProgressRate)">{{ formatContent(agencyDataOfShenZhen.baoFei.subtotal.timeProgressRate) }}%</td>
+              <td :class="timeProgressRateColor(agencyDataOfShenZhen.baoFei.subtotal.timeProgressRate)">{{ formatContent(agencyDataOfShenZhen.baoFei.subtotal.timeProgressRate, true) }}%</td>
             </tr>
             <tr class="bg-color-1">
               <td v-if="!showWeek">{{ formatContent(agencyDataOfXinJiang.baoFei.car.currentDayOfShouRu) }}</td>
               <td v-if="showWeek">{{ formatContent(agencyDataOfXinJiang.baoFei.car.currentWeekOfShouRu) }}</td>
               <td>{{ formatContent(agencyDataOfXinJiang.baoFei.car.currentYearOfShouRu) }}</td>
               <td>{{ formatContent(agencyDataOfXinJiang.baoFei.car.currentYearOfShouRu / currentDayOfYear) }}</td>
-              <td :class="timeProgressRateColor(agencyDataOfXinJiang.baoFei.car.timeProgressRate)">{{ formatContent(agencyDataOfXinJiang.baoFei.car.timeProgressRate) }}%</td>
+              <td :class="timeProgressRateColor(agencyDataOfXinJiang.baoFei.car.timeProgressRate)">{{ formatContent(agencyDataOfXinJiang.baoFei.car.timeProgressRate, true) }}%</td>
             </tr>
             <tr class="bg-color-2">
               <td v-if="!showWeek">{{ formatContent(agencyDataOfXinJiang.baoFei.noCar.currentDayOfShouRu) }}</td>
               <td v-if="showWeek">{{ formatContent(agencyDataOfXinJiang.baoFei.noCar.currentWeekOfShouRu) }}</td>
               <td>{{ formatContent(agencyDataOfXinJiang.baoFei.noCar.currentYearOfShouRu) }}</td>
               <td>{{ formatContent(agencyDataOfXinJiang.baoFei.noCar.currentYearOfShouRu / currentDayOfYear) }}</td>
-              <td :class="timeProgressRateColor(agencyDataOfXinJiang.baoFei.noCar.timeProgressRate)">{{ formatContent(agencyDataOfXinJiang.baoFei.noCar.timeProgressRate) }}%</td>
+              <td :class="timeProgressRateColor(agencyDataOfXinJiang.baoFei.noCar.timeProgressRate)">{{ formatContent(agencyDataOfXinJiang.baoFei.noCar.timeProgressRate, true) }}%</td>
             </tr>
             <tr class="bg-color-3 font-bold">
               <td v-if="!showWeek">{{ formatContent(agencyDataOfXinJiang.baoFei.subtotal.currentDayOfShouRu) }}</td>
               <td v-if="showWeek">{{ formatContent(agencyDataOfXinJiang.baoFei.subtotal.currentWeekOfShouRu) }}</td>
               <td>{{ formatContent(agencyDataOfXinJiang.baoFei.subtotal.currentYearOfShouRu) }}</td>
               <td>{{ formatContent(agencyDataOfXinJiang.baoFei.subtotal.currentYearOfShouRu / currentDayOfYear) }}</td>
-              <td :class="timeProgressRateColor(agencyDataOfXinJiang.baoFei.subtotal.timeProgressRate)">{{ formatContent(agencyDataOfXinJiang.baoFei.subtotal.timeProgressRate) }}%</td>
+              <td :class="timeProgressRateColor(agencyDataOfXinJiang.baoFei.subtotal.timeProgressRate)">{{ formatContent(agencyDataOfXinJiang.baoFei.subtotal.timeProgressRate, true) }}%</td>
             </tr>
             <tr class="bg-color-1">
               <td v-if="!showWeek">{{ formatContent(agencyDataOfGuangDong.baoFei.car.currentDayOfShouRu) }}</td>
               <td v-if="showWeek">{{ formatContent(agencyDataOfGuangDong.baoFei.car.currentWeekOfShouRu) }}</td>
               <td>{{ formatContent(agencyDataOfGuangDong.baoFei.car.currentYearOfShouRu) }}</td>
               <td>{{ formatContent(agencyDataOfGuangDong.baoFei.car.currentYearOfShouRu / currentDayOfYear) }}</td>
-              <td :class="timeProgressRateColor(agencyDataOfGuangDong.baoFei.car.timeProgressRate)">{{ formatContent(agencyDataOfGuangDong.baoFei.car.timeProgressRate) }}%</td>
+              <td :class="timeProgressRateColor(agencyDataOfGuangDong.baoFei.car.timeProgressRate)">{{ formatContent(agencyDataOfGuangDong.baoFei.car.timeProgressRate, true) }}%</td>
             </tr>
             <tr class="bg-color-2">
               <td v-if="!showWeek">{{ formatContent(agencyDataOfGuangDong.baoFei.noCar.currentDayOfShouRu) }}</td>
               <td v-if="showWeek">{{ formatContent(agencyDataOfGuangDong.baoFei.noCar.currentWeekOfShouRu) }}</td>
               <td>{{ formatContent(agencyDataOfGuangDong.baoFei.noCar.currentYearOfShouRu) }}</td>
               <td>{{ formatContent(agencyDataOfGuangDong.baoFei.noCar.currentYearOfShouRu / currentDayOfYear) }}</td>
-              <td :class="timeProgressRateColor(agencyDataOfGuangDong.baoFei.noCar.timeProgressRate)">{{ formatContent(agencyDataOfGuangDong.baoFei.noCar.timeProgressRate) }}%</td>
+              <td :class="timeProgressRateColor(agencyDataOfGuangDong.baoFei.noCar.timeProgressRate)">{{ formatContent(agencyDataOfGuangDong.baoFei.noCar.timeProgressRate, true) }}%</td>
             </tr>
             <tr class="bg-color-3 font-bold">
               <td v-if="!showWeek">{{ formatContent(agencyDataOfGuangDong.baoFei.subtotal.currentDayOfShouRu) }}</td>
               <td v-if="showWeek">{{ formatContent(agencyDataOfGuangDong.baoFei.subtotal.currentWeekOfShouRu) }}</td>
               <td>{{ formatContent(agencyDataOfGuangDong.baoFei.subtotal.currentYearOfShouRu) }}</td>
               <td>{{ formatContent(agencyDataOfGuangDong.baoFei.subtotal.currentYearOfShouRu / currentDayOfYear) }}</td>
-              <td :class="timeProgressRateColor(agencyDataOfGuangDong.baoFei.subtotal.timeProgressRate)">{{ formatContent(agencyDataOfGuangDong.baoFei.subtotal.timeProgressRate) }}%</td>
+              <td :class="timeProgressRateColor(agencyDataOfGuangDong.baoFei.subtotal.timeProgressRate)">{{ formatContent(agencyDataOfGuangDong.baoFei.subtotal.timeProgressRate, true) }}%</td>
             </tr>
             <tr class="bg-color-1 font-bold">
               <td v-if="!showWeek">{{ formatContent(total.baoFei.car.currentDayOfShouRu) }}</td>
               <td v-if="showWeek">{{ formatContent(total.baoFei.car.currentWeekOfShouRu) }}</td>
               <td>{{ formatContent(total.baoFei.car.currentYearOfShouRu) }}</td>
               <td>{{ formatContent(total.baoFei.car.currentYearOfShouRu / currentDayOfYear) }}</td>
-              <td :class="timeProgressRateColor(total.baoFei.car.timeProgressRate)">{{ formatContent(total.baoFei.car.timeProgressRate) }}%</td>
+              <td :class="timeProgressRateColor(total.baoFei.car.timeProgressRate)">{{ formatContent(total.baoFei.car.timeProgressRate, true) }}%</td>
             </tr>
             <tr class="bg-color-2 font-bold">
               <td v-if="!showWeek">{{ formatContent(total.baoFei.noCar.currentDayOfShouRu) }}</td>
               <td v-if="showWeek">{{ formatContent(total.baoFei.noCar.currentYearOfShouRu) }}</td>
               <td>{{ formatContent(total.baoFei.noCar.currentWeekOfShouRu) }}</td>
               <td>{{ formatContent(total.baoFei.noCar.currentYearOfShouRu / currentDayOfYear) }}</td>
-              <td :class="timeProgressRateColor(total.baoFei.noCar.timeProgressRate)">{{ formatContent(total.baoFei.noCar.timeProgressRate) }}%</td>
+              <td :class="timeProgressRateColor(total.baoFei.noCar.timeProgressRate)">{{ formatContent(total.baoFei.noCar.timeProgressRate, true) }}%</td>
             </tr>
             <tr class="font-bold">
               <td v-if="!showWeek">{{ formatContent(total.baoFei.online.currentDayOfShouRu) }}</td>
               <td v-if="showWeek">{{ formatContent(total.baoFei.online.currentWeekOfShouRu) }}</td>
               <td>{{ formatContent(total.baoFei.online.currentYearOfShouRu) }}</td>
               <td>{{ formatContent(total.baoFei.online.currentYearOfShouRu / currentDayOfYear) }}</td>
-              <td :class="timeProgressRateColor(total.baoFei.online.timeProgressRate)">{{ formatContent(total.baoFei.online.timeProgressRate) }}%</td>
+              <td :class="timeProgressRateColor(total.baoFei.online.timeProgressRate)">{{ formatContent(total.baoFei.online.timeProgressRate, true) }}%</td>
             </tr>
             <tr class="bg-color-4 font-bold font-color-3">
               <td v-if="!showWeek">{{ formatContent(total.baoFei.final.currentDayOfShouRu) }}</td>
               <td v-if="showWeek">{{ formatContent(total.baoFei.final.currentWeekOfShouRu) }}</td>
               <td>{{ formatContent(total.baoFei.final.currentYearOfShouRu) }}</td>
               <td>{{ formatContent(total.baoFei.final.currentYearOfShouRu / currentDayOfYear) }}</td>
-              <td :class="timeProgressRateColor(total.baoFei.final.timeProgressRate)">{{ formatContent(total.baoFei.final.timeProgressRate) }}%</td>
+              <td :class="timeProgressRateColor(total.baoFei.final.timeProgressRate)">{{ formatContent(total.baoFei.final.timeProgressRate, true) }}%</td>
             </tr>
           </table>
         </div>
@@ -433,7 +433,7 @@ export default {
     return {
       currentYear: moment().format('YYYY'),
       currentDate: moment().format('MMM Do'),
-      currentDayOfYear: moment().format('DDD'),
+      currentDayOfYear: moment('2017-03-20').format('DDD'),
 
       showWeek: false,
 
@@ -525,12 +525,12 @@ export default {
         if ((aAgency == agency) && (aInsuranceType == insuranceType)) {
 
           return {
-            currentDayOfShouRu: parseFloat(currentDayOfShouRu),
-            currentWeekOfShouRu: parseFloat(currentWeekOfShouRu),
-            currentYearOfShouRu: parseFloat(currentYearOfShouRu),
-            currentDayOfQianDan: parseFloat(currentDayOfQianDan),
-            currentWeekOfQianDan: parseFloat(currentWeekOfQianDan),
-            currentYearOfQianDan: parseFloat(currentYearOfQianDan)
+            currentDayOfShouRu: parseFloat(currentDayOfShouRu) / 10000,
+            currentWeekOfShouRu: parseFloat(currentWeekOfShouRu) / 10000,
+            currentYearOfShouRu: parseFloat(currentYearOfShouRu) / 10000,
+            currentDayOfQianDan: parseFloat(currentDayOfQianDan) / 10000,
+            currentWeekOfQianDan: parseFloat(currentWeekOfQianDan) / 10000,
+            currentYearOfQianDan: parseFloat(currentYearOfQianDan) / 10000
           }
         }
       }
@@ -557,12 +557,12 @@ export default {
 
       return 0
     },
-    getDataByKeyOfJinDu(aDate = moment().format('YYYY/MM/DD')) {
+    getDataByKeyOfJinDu(aDate = moment().format('YYYY-MM-DD')) {
       const self = this
 
       for (let i = 0, count = self.dataSetOfJinDu.length; i < count; i++) {
         const [ , currentDate, percentage ] = self.dataSetOfJinDu[i]
-        if (currentDate == aDate) {
+        if (currentDate.indexOf(aDate) != -1) {
           return parseFloat(percentage)
         }
       }
@@ -573,15 +573,17 @@ export default {
       const self = this
 
       for (let i = 0, count = self.dataSetOfPeiKuan.length; i < count; i++) {
-        const [ agency = '', insuranceType = '', yiJue2016 = 0, yiJue2017 = 0, weiJue2016 = 0, weiJue2017 = 0, peiKuanYiJue2016 = 0, peiKuanWeiJue2016 = 0 ] = self.dataSetOfPeiKuan[i]
+        const [ , agency = '', insuranceType = '', yiJue2016 = 0, yiJue2017 = 0, weiJue2016 = 0, weiJue2017 = 0, peiKuanYiJue2016 = 0, peiKuanWeiJue2016 = 0, toDayYiJue = 0, toDayWeiJue = 0 ] = self.dataSetOfPeiKuan[i]
         if ((aAgency == agency) && (aInsuranceType == insuranceType)) {
           return {
-            yiJue2016: parseFloat(yiJue2016),
-            yiJue2017: parseFloat(yiJue2017),
-            weiJue2016: parseFloat(weiJue2016),
-            weiJue2017: parseFloat(weiJue2017),
-            peiKuanYiJue2016: parseFloat(peiKuanYiJue2016),
-            peiKuanWeiJue2016: parseFloat(peiKuanWeiJue2016)
+            yiJue2016: parseFloat(yiJue2016) / 10000,
+            yiJue2017: parseFloat(yiJue2017) / 10000,
+            weiJue2016: parseFloat(weiJue2016) / 10000,
+            weiJue2017: parseFloat(weiJue2017) / 10000,
+            peiKuanYiJue2016: parseFloat(peiKuanYiJue2016) / 10000,
+            peiKuanWeiJue2016: parseFloat(peiKuanWeiJue2016) / 10000,
+            toDayYiJue: parseFloat(toDayYiJue) / 10000,
+            toDayWeiJue: parseFloat(toDayWeiJue) / 10000
           }
         }
       }
@@ -592,7 +594,9 @@ export default {
         weiJue2016: 0,
         weiJue2017: 0,
         peiKuanYiJue2016: 0,
-        peiKuanWeiJue2016: 0
+        peiKuanWeiJue2016: 0,
+        toDayYiJue: 0,
+        toDayWeiJue: 0
       }
     },
     async fetchDataSetById(aDataSetId) {
@@ -612,7 +616,7 @@ export default {
       const muBiaoOfOnline = self.getDataByKeyOfMuBiao('互联网业务')
 
       /* jinDu */
-      const jinDuOfToDay = self.getDataByKeyOfJinDu()
+      const jinDuOfToDay = self.getDataByKeyOfJinDu('2017-03-20')
 
       /* divisor */
       const divisorOfShenZhen = muBiaoOfShenZhen * jinDuOfToDay
@@ -622,10 +626,10 @@ export default {
       const divisorOfTotal = (muBiaoOfShenZhen + muBiaoOfXinJiang + muBiaoOfGuangDong) * jinDuOfToDay
 
       /* agencyDataOfShenZhen */
-      const baoFeiOfCarOfShenZhen = self.getDataByKeyOfBaoFei('深圳分公司营业本部', '车')
+      const baoFeiOfCarOfShenZhen = self.getDataByKeyOfBaoFei('深圳分公司', '车')
       const baoFeiOfCarOfZhongBu = self.getDataByKeyOfBaoFei('总部营业部', '车')
 
-      const baoFeiOfNoCarOfShenZhen = self.getDataByKeyOfBaoFei('深圳分公司营业本部', '非车')
+      const baoFeiOfNoCarOfShenZhen = self.getDataByKeyOfBaoFei('深圳分公司', '非车')
       const baoFeiOfNoCarOfZhongBu = self.getDataByKeyOfBaoFei('总部营业部', '非车')
 
       const baoFeiOfOnlineOfShenZhen = self.getDataByKeyOfBaoFei('深圳分公司', '深分航意险（独立）')
@@ -635,7 +639,7 @@ export default {
         currentDayOfShouRu: baoFeiOfCarOfShenZhen.currentDayOfShouRu + baoFeiOfCarOfZhongBu.currentDayOfShouRu,
         currentWeekOfShouRu: baoFeiOfCarOfShenZhen.currentWeekOfShouRu + baoFeiOfCarOfZhongBu.currentWeekOfShouRu,
         currentYearOfShouRu: baoFeiOfCarOfShenZhen.currentYearOfShouRu + baoFeiOfCarOfZhongBu.currentYearOfShouRu,
-        timeProgressRate: (baoFeiOfCarOfShenZhen.currentYearOfShouRu + baoFeiOfCarOfZhongBu.currentYearOfShouRu) / divisorOfShenZhen * 0.85,
+        timeProgressRate: (baoFeiOfCarOfShenZhen.currentYearOfShouRu + baoFeiOfCarOfZhongBu.currentYearOfShouRu) / (divisorOfShenZhen * 0.85),
 
         currentDayOfQianDan: baoFeiOfCarOfShenZhen.currentDayOfQianDan + baoFeiOfCarOfZhongBu.currentDayOfQianDan,
         currentWeekOfQianDan: baoFeiOfCarOfShenZhen.currentWeekOfQianDan + baoFeiOfCarOfZhongBu.currentWeekOfQianDan,
@@ -646,7 +650,7 @@ export default {
         currentDayOfShouRu: baoFeiOfNoCarOfShenZhen.currentDayOfShouRu + baoFeiOfNoCarOfZhongBu.currentDayOfShouRu,
         currentWeekOfShouRu: baoFeiOfNoCarOfShenZhen.currentWeekOfShouRu + baoFeiOfNoCarOfZhongBu.currentWeekOfShouRu,
         currentYearOfShouRu: baoFeiOfNoCarOfShenZhen.currentYearOfShouRu + baoFeiOfNoCarOfZhongBu.currentYearOfShouRu,
-        timeProgressRate: (baoFeiOfNoCarOfShenZhen.currentYearOfShouRu + baoFeiOfNoCarOfZhongBu.currentYearOfShouRu) / divisorOfShenZhen * 0.15,
+        timeProgressRate: (baoFeiOfNoCarOfShenZhen.currentYearOfShouRu + baoFeiOfNoCarOfZhongBu.currentYearOfShouRu) / (divisorOfShenZhen * 0.15),
 
         currentDayOfQianDan: baoFeiOfNoCarOfShenZhen.currentDayOfQianDan + baoFeiOfNoCarOfZhongBu.currentDayOfQianDan,
         currentWeekOfQianDan: baoFeiOfNoCarOfShenZhen.currentWeekOfQianDan + baoFeiOfNoCarOfZhongBu.currentWeekOfQianDan,
@@ -676,14 +680,14 @@ export default {
       }
 
       /* agencyDataOfXinJiang */
-      const baoFeiOfCarOfXinJiang = self.getDataByKeyOfBaoFei('新疆分公司营业本部', '车')
-      const baoFeiOfNoCarOfXinJiang = self.getDataByKeyOfBaoFei('新疆分公司营业本部', '非车')
+      const baoFeiOfCarOfXinJiang = self.getDataByKeyOfBaoFei('新疆分公司', '车')
+      const baoFeiOfNoCarOfXinJiang = self.getDataByKeyOfBaoFei('新疆分公司', '非车')
 
       self.agencyDataOfXinJiang.baoFei.car = {
         currentDayOfShouRu: baoFeiOfCarOfXinJiang.currentDayOfShouRu,
         currentWeekOfShouRu: baoFeiOfCarOfXinJiang.currentWeekOfShouRu,
         currentYearOfShouRu: baoFeiOfCarOfXinJiang.currentYearOfShouRu,
-        timeProgressRate: baoFeiOfCarOfXinJiang.currentYearOfShouRu / divisorOfXinJiang * 0.85,
+        timeProgressRate: baoFeiOfCarOfXinJiang.currentYearOfShouRu / (divisorOfXinJiang * 0.85),
 
         currentDayOfQianDan: baoFeiOfCarOfXinJiang.currentDayOfQianDan,
         currentWeekOfQianDan: baoFeiOfCarOfXinJiang.currentWeekOfQianDan,
@@ -694,7 +698,7 @@ export default {
         currentDayOfShouRu: baoFeiOfNoCarOfXinJiang.currentDayOfShouRu,
         currentWeekOfShouRu: baoFeiOfNoCarOfXinJiang.currentWeekOfShouRu,
         currentYearOfShouRu: baoFeiOfNoCarOfXinJiang.currentYearOfShouRu,
-        timeProgressRate: baoFeiOfNoCarOfXinJiang.currentYearOfShouRu / divisorOfXinJiang * 0.15,
+        timeProgressRate: baoFeiOfNoCarOfXinJiang.currentYearOfShouRu / (divisorOfXinJiang * 0.15),
 
         currentDayOfQianDan: baoFeiOfNoCarOfXinJiang.currentDayOfQianDan,
         currentWeekOfQianDan: baoFeiOfNoCarOfXinJiang.currentWeekOfQianDan,
@@ -713,14 +717,14 @@ export default {
       }
 
       /* agencyDataOfGuangDong */
-      const baoFeiOfCarOfGuangDong = self.getDataByKeyOfBaoFei('广东分公司营业本部', '车')
-      const baoFeiOfNoCarOfGuangDong = self.getDataByKeyOfBaoFei('广东分公司营业本部', '非车')
+      const baoFeiOfCarOfGuangDong = self.getDataByKeyOfBaoFei('广东分公司', '车')
+      const baoFeiOfNoCarOfGuangDong = self.getDataByKeyOfBaoFei('广东分公司', '非车')
 
       self.agencyDataOfGuangDong.baoFei.car = {
         currentDayOfShouRu: baoFeiOfCarOfGuangDong.currentDayOfShouRu,
         currentWeekOfShouRu: baoFeiOfCarOfGuangDong.currentWeekOfShouRu,
         currentYearOfShouRu: baoFeiOfCarOfGuangDong.currentYearOfShouRu,
-        timeProgressRate: baoFeiOfCarOfGuangDong.currentYearOfShouRu / muBiaoOfGuangDong * 0.85,
+        timeProgressRate: baoFeiOfCarOfGuangDong.currentYearOfShouRu / (muBiaoOfGuangDong * 0.85),
 
         currentDayOfQianDan: baoFeiOfCarOfGuangDong.currentDayOfQianDan,
         currentWeekOfQianDan: baoFeiOfCarOfGuangDong.currentWeekOfQianDan,
@@ -731,7 +735,7 @@ export default {
         currentDayOfShouRu: baoFeiOfNoCarOfGuangDong.currentDayOfShouRu,
         currentWeekOfShouRu: baoFeiOfNoCarOfGuangDong.currentWeekOfShouRu,
         currentYearOfShouRu: baoFeiOfNoCarOfGuangDong.currentYearOfShouRu,
-        timeProgressRate: baoFeiOfNoCarOfGuangDong.currentYearOfShouRu / muBiaoOfGuangDong * 0.15,
+        timeProgressRate: baoFeiOfNoCarOfGuangDong.currentYearOfShouRu / (muBiaoOfGuangDong * 0.15),
 
         currentDayOfQianDan: baoFeiOfNoCarOfGuangDong.currentDayOfQianDan,
         currentWeekOfQianDan: baoFeiOfNoCarOfGuangDong.currentWeekOfQianDan,
@@ -754,7 +758,7 @@ export default {
         currentDayOfShouRu: self.agencyDataOfShenZhen.baoFei.car.currentDayOfShouRu + self.agencyDataOfXinJiang.baoFei.car.currentDayOfShouRu + self.agencyDataOfGuangDong.baoFei.car.currentDayOfShouRu,
         currentWeekOfShouRu: self.agencyDataOfShenZhen.baoFei.car.currentWeekOfShouRu + self.agencyDataOfXinJiang.baoFei.car.currentWeekOfShouRu + self.agencyDataOfGuangDong.baoFei.car.currentWeekOfShouRu,
         currentYearOfShouRu: self.agencyDataOfShenZhen.baoFei.car.currentYearOfShouRu + self.agencyDataOfXinJiang.baoFei.car.currentYearOfShouRu + self.agencyDataOfGuangDong.baoFei.car.currentYearOfShouRu,
-        timeProgressRate: (self.agencyDataOfShenZhen.baoFei.car.currentYearOfShouRu + self.agencyDataOfXinJiang.baoFei.car.currentYearOfShouRu + self.agencyDataOfGuangDong.baoFei.car.currentYearOfShouRu) / divisorOfTotal * 0.85,
+        timeProgressRate: (self.agencyDataOfShenZhen.baoFei.car.currentYearOfShouRu + self.agencyDataOfXinJiang.baoFei.car.currentYearOfShouRu + self.agencyDataOfGuangDong.baoFei.car.currentYearOfShouRu) / (divisorOfTotal * 0.85),
 
         currentDayOfQianDan: self.agencyDataOfShenZhen.baoFei.car.currentDayOfQianDan + self.agencyDataOfXinJiang.baoFei.car.currentDayOfQianDan + self.agencyDataOfGuangDong.baoFei.car.currentDayOfQianDan,
         currentWeekOfQianDan: self.agencyDataOfShenZhen.baoFei.car.currentWeekOfQianDan + self.agencyDataOfXinJiang.baoFei.car.currentWeekOfQianDan + self.agencyDataOfGuangDong.baoFei.car.currentWeekOfQianDan,
@@ -765,7 +769,7 @@ export default {
         currentDayOfShouRu: self.agencyDataOfShenZhen.baoFei.noCar.currentDayOfShouRu + self.agencyDataOfXinJiang.baoFei.noCar.currentDayOfShouRu + self.agencyDataOfGuangDong.baoFei.noCar.currentDayOfShouRu,
         currentWeekOfShouRu: self.agencyDataOfShenZhen.baoFei.noCar.currentWeekOfShouRu + self.agencyDataOfXinJiang.baoFei.noCar.currentWeekOfShouRu + self.agencyDataOfGuangDong.baoFei.noCar.currentWeekOfShouRu,
         currentYearOfShouRu: self.agencyDataOfShenZhen.baoFei.noCar.currentYearOfShouRu + self.agencyDataOfXinJiang.baoFei.noCar.currentYearOfShouRu + self.agencyDataOfGuangDong.baoFei.noCar.currentYearOfShouRu,
-        timeProgressRate: (self.agencyDataOfShenZhen.baoFei.noCar.currentYearOfShouRu + self.agencyDataOfXinJiang.baoFei.noCar.currentYearOfShouRu + self.agencyDataOfGuangDong.baoFei.noCar.currentYearOfShouRu) / divisorOfTotal * 0.15,
+        timeProgressRate: (self.agencyDataOfShenZhen.baoFei.noCar.currentYearOfShouRu + self.agencyDataOfXinJiang.baoFei.noCar.currentYearOfShouRu + self.agencyDataOfGuangDong.baoFei.noCar.currentYearOfShouRu) / (divisorOfTotal * 0.15),
 
         currentDayOfQianDan: self.agencyDataOfShenZhen.baoFei.noCar.currentDayOfQianDan + self.agencyDataOfXinJiang.baoFei.noCar.currentDayOfQianDan + self.agencyDataOfGuangDong.baoFei.noCar.currentDayOfQianDan,
         currentWeekOfQianDan: self.agencyDataOfShenZhen.baoFei.noCar.currentWeekOfQianDan + self.agencyDataOfXinJiang.baoFei.noCar.currentWeekOfQianDan + self.agencyDataOfGuangDong.baoFei.noCar.currentWeekOfQianDan,
@@ -803,33 +807,33 @@ export default {
       const peiKuanOfCarOfShenZhen =  self.getDataByKeyOfPeiKuan('深圳分公司', '车险')
       const peiKuanOfCarOfZhongBu =  self.getDataByKeyOfPeiKuan('总部营业部', '车险')
 
-      const peiKuanOfNoCarOfShenZhen =  self.getDataByKeyOfPeiKuan('深圳分公司', '非车（含互联网）')
-      const peiKuanOfNoCarOfZhongBu =  self.getDataByKeyOfPeiKuan('总部营业部', '非车（含互联网）')
+      const peiKuanOfNoCarOfShenZhen =  self.getDataByKeyOfPeiKuan('深圳分公司', '非车')
+      const peiKuanOfNoCarOfZhongBu =  self.getDataByKeyOfPeiKuan('总部营业部', '非车')
 
       const peiKuanOfOnlineOfShenZhen =  self.getDataByKeyOfPeiKuan('深分航意险', '互联网')
       const peiKuanOfOnlineOfZhongBu =  self.getDataByKeyOfPeiKuan('总公司境内旅游意外险', '互联网')
 
       self.agencyDataOfShenZhen.peiKuan.car = {
-        currentDayOfYiJue: (peiKuanOfCarOfShenZhen.yiJue2016 + peiKuanOfCarOfZhongBu.yiJue2016 + peiKuanOfCarOfShenZhen.yiJue2017 + peiKuanOfCarOfZhongBu.yiJue2017) - (peiKuanOfCarOfShenZhen.peiKuanYiJue2016 + peiKuanOfCarOfZhongBu.peiKuanYiJue2016),
+        currentDayOfYiJue: peiKuanOfCarOfShenZhen.toDayYiJue,
         currentYearOfYiJue: (peiKuanOfCarOfShenZhen.yiJue2016 + peiKuanOfCarOfZhongBu.yiJue2016 + peiKuanOfCarOfShenZhen.yiJue2017 + peiKuanOfCarOfZhongBu.yiJue2017) - (peiKuanOfCarOfShenZhen.peiKuanYiJue2016 + peiKuanOfCarOfZhongBu.peiKuanYiJue2016),
 
-        currentDayOfWeiJue: (peiKuanOfCarOfShenZhen.weiJue2016 + peiKuanOfCarOfZhongBu.weiJue2016 + peiKuanOfCarOfShenZhen.weiJue2017 + peiKuanOfCarOfZhongBu.weiJue2017) - (peiKuanOfCarOfShenZhen.peiKuanWeiJue2016 + peiKuanOfCarOfZhongBu.peiKuanWeiJue2016),
+        currentDayOfWeiJue: peiKuanOfCarOfShenZhen.toDayWeiJue,
         currentYearOfWeiJue: (peiKuanOfCarOfShenZhen.weiJue2016 + peiKuanOfCarOfZhongBu.weiJue2016 + peiKuanOfCarOfShenZhen.weiJue2017 + peiKuanOfCarOfZhongBu.weiJue2017) - (peiKuanOfCarOfShenZhen.peiKuanWeiJue2016 + peiKuanOfCarOfZhongBu.peiKuanWeiJue2016)
       }
 
       self.agencyDataOfShenZhen.peiKuan.noCar = {
-        currentDayOfYiJue: (peiKuanOfNoCarOfShenZhen.yiJue2016 + peiKuanOfNoCarOfZhongBu.yiJue2016 + peiKuanOfNoCarOfShenZhen.yiJue2017 + peiKuanOfNoCarOfZhongBu.yiJue2017) - (peiKuanOfNoCarOfShenZhen.peiKuanYiJue2016 + peiKuanOfNoCarOfZhongBu.peiKuanYiJue2016),
+        currentDayOfYiJue: peiKuanOfNoCarOfShenZhen.toDayYiJue,
         currentYearOfYiJue: (peiKuanOfNoCarOfShenZhen.yiJue2016 + peiKuanOfNoCarOfZhongBu.yiJue2016 + peiKuanOfNoCarOfShenZhen.yiJue2017 + peiKuanOfNoCarOfZhongBu.yiJue2017) - (peiKuanOfNoCarOfShenZhen.peiKuanYiJue2016 + peiKuanOfNoCarOfZhongBu.peiKuanYiJue2016),
 
-        currentDayOfWeiJue: (peiKuanOfNoCarOfShenZhen.weiJue2016 + peiKuanOfNoCarOfZhongBu.weiJue2016 + peiKuanOfNoCarOfShenZhen.weiJue2017 + peiKuanOfNoCarOfZhongBu.weiJue2017) - (peiKuanOfNoCarOfShenZhen.peiKuanWeiJue2016 + peiKuanOfNoCarOfZhongBu.peiKuanWeiJue2016),
+        currentDayOfWeiJue: peiKuanOfNoCarOfShenZhen.toDayWeiJue,
         currentYearOfWeiJue: (peiKuanOfNoCarOfShenZhen.weiJue2016 + peiKuanOfNoCarOfZhongBu.weiJue2016 + peiKuanOfNoCarOfShenZhen.weiJue2017 + peiKuanOfNoCarOfZhongBu.weiJue2017) - (peiKuanOfNoCarOfShenZhen.peiKuanWeiJue2016 + peiKuanOfNoCarOfZhongBu.peiKuanWeiJue2016)
       }
 
       self.agencyDataOfShenZhen.peiKuan.online = {
-        currentDayOfYiJue: (peiKuanOfOnlineOfShenZhen.yiJue2016 + peiKuanOfOnlineOfZhongBu.yiJue2016 + peiKuanOfOnlineOfShenZhen.yiJue2017 + peiKuanOfOnlineOfZhongBu.yiJue2017) - (peiKuanOfOnlineOfShenZhen.peiKuanYiJue2016 + peiKuanOfOnlineOfZhongBu.peiKuanYiJue2016),
+        currentDayOfYiJue: peiKuanOfOnlineOfShenZhen.toDayYiJue,
         currentYearOfYiJue: (peiKuanOfOnlineOfShenZhen.yiJue2016 + peiKuanOfOnlineOfZhongBu.yiJue2016 + peiKuanOfOnlineOfShenZhen.yiJue2017 + peiKuanOfOnlineOfZhongBu.yiJue2017) - (peiKuanOfOnlineOfShenZhen.peiKuanYiJue2016 + peiKuanOfOnlineOfZhongBu.peiKuanYiJue2016),
 
-        currentDayOfWeiJue: (peiKuanOfOnlineOfShenZhen.weiJue2016 + peiKuanOfOnlineOfZhongBu.weiJue2016 + peiKuanOfOnlineOfShenZhen.weiJue2017 + peiKuanOfOnlineOfZhongBu.weiJue2017) - (peiKuanOfOnlineOfShenZhen.peiKuanWeiJue2016 + peiKuanOfOnlineOfZhongBu.peiKuanWeiJue2016),
+        currentDayOfWeiJue: peiKuanOfOnlineOfShenZhen.toDayWeiJue,
         currentYearOfWeiJue: (peiKuanOfOnlineOfShenZhen.weiJue2016 + peiKuanOfOnlineOfZhongBu.weiJue2016 + peiKuanOfOnlineOfShenZhen.weiJue2017 + peiKuanOfOnlineOfZhongBu.weiJue2017) - (peiKuanOfOnlineOfShenZhen.peiKuanWeiJue2016 + peiKuanOfOnlineOfZhongBu.peiKuanWeiJue2016)
       }
 
@@ -843,21 +847,21 @@ export default {
 
       /* agencyDataOfXinJiang */
       const peiKuanOfCarOfXinJiang =  self.getDataByKeyOfPeiKuan('新疆分公司', '车险')
-      const peiKuanOfNoCarOfXinJiang =  self.getDataByKeyOfPeiKuan('新疆分公司', '非车（含互联网）')
+      const peiKuanOfNoCarOfXinJiang =  self.getDataByKeyOfPeiKuan('新疆分公司', '非车')
 
       self.agencyDataOfXinJiang.peiKuan.car = {
-        currentDayOfYiJue: (peiKuanOfCarOfXinJiang.yiJue2016 + peiKuanOfCarOfXinJiang.yiJue2017) - peiKuanOfCarOfXinJiang.peiKuanYiJue2016,
+        currentDayOfYiJue: peiKuanOfCarOfXinJiang.toDayYiJue,
         currentYearOfYiJue: (peiKuanOfCarOfXinJiang.yiJue2016 + peiKuanOfCarOfXinJiang.yiJue2017) - peiKuanOfCarOfXinJiang.peiKuanYiJue2016,
 
-        currentDayOfWeiJue: (peiKuanOfCarOfXinJiang.weiJue2016 + peiKuanOfCarOfXinJiang.weiJue2017) - peiKuanOfCarOfXinJiang.peiKuanWeiJue2016,
+        currentDayOfWeiJue: peiKuanOfCarOfXinJiang.toDayWeiJue,
         currentYearOfWeiJue: (peiKuanOfCarOfXinJiang.weiJue2016 + peiKuanOfCarOfXinJiang.weiJue2017) - peiKuanOfCarOfXinJiang.peiKuanWeiJue2016,
       }
 
       self.agencyDataOfXinJiang.peiKuan.noCar = {
-        currentDayOfYiJue: (peiKuanOfNoCarOfXinJiang.yiJue2016 + peiKuanOfNoCarOfXinJiang.yiJue2017) - peiKuanOfNoCarOfXinJiang.peiKuanYiJue2016,
+        currentDayOfYiJue: peiKuanOfNoCarOfXinJiang.toDayYiJue,
         currentYearOfYiJue: (peiKuanOfNoCarOfXinJiang.yiJue2016 + peiKuanOfNoCarOfXinJiang.yiJue2017) - peiKuanOfNoCarOfXinJiang.peiKuanYiJue2016,
 
-        currentDayOfWeiJue: (peiKuanOfNoCarOfXinJiang.weiJue2016 + peiKuanOfNoCarOfXinJiang.weiJue2017) - peiKuanOfNoCarOfXinJiang.peiKuanWeiJue2016,
+        currentDayOfWeiJue: peiKuanOfNoCarOfXinJiang.toDayWeiJue,
         currentYearOfWeiJue: (peiKuanOfNoCarOfXinJiang.weiJue2016 + peiKuanOfNoCarOfXinJiang.weiJue2017) - peiKuanOfNoCarOfXinJiang.peiKuanWeiJue2016
       }
 
@@ -871,21 +875,21 @@ export default {
 
       /* agencyDataOfGuangDong */
       const peiKuanOfCarOfGuangDong =  self.getDataByKeyOfPeiKuan('广东分公司', '车险')
-      const peiKuanOfNoCarOfGuangDong =  self.getDataByKeyOfPeiKuan('广东分公司', '非车（含互联网）')
+      const peiKuanOfNoCarOfGuangDong =  self.getDataByKeyOfPeiKuan('广东分公司', '非车')
 
       self.agencyDataOfGuangDong.peiKuan.car = {
-        currentDayOfYiJue: (peiKuanOfCarOfGuangDong.yiJue2016 + peiKuanOfCarOfGuangDong.yiJue2017) - peiKuanOfCarOfGuangDong.peiKuanYiJue2016,
+        currentDayOfYiJue: peiKuanOfCarOfGuangDong.toDayYiJue,
         currentYearOfYiJue: (peiKuanOfCarOfGuangDong.yiJue2016 + peiKuanOfCarOfGuangDong.yiJue2017) - peiKuanOfCarOfGuangDong.peiKuanYiJue2016,
 
-        currentDayOfWeiJue: (peiKuanOfCarOfGuangDong.weiJue2016 + peiKuanOfCarOfGuangDong.weiJue2017) - peiKuanOfCarOfGuangDong.peiKuanWeiJue2016,
+        currentDayOfWeiJue: peiKuanOfCarOfGuangDong.toDayWeiJue,
         currentYearOfWeiJue: (peiKuanOfCarOfGuangDong.weiJue2016 + peiKuanOfCarOfGuangDong.weiJue2017) - peiKuanOfCarOfGuangDong.peiKuanWeiJue2016,
       }
 
       self.agencyDataOfGuangDong.peiKuan.noCar = {
-        currentDayOfYiJue: (peiKuanOfNoCarOfGuangDong.yiJue2016 + peiKuanOfNoCarOfGuangDong.yiJue2017) - peiKuanOfNoCarOfGuangDong.peiKuanYiJue2016,
+        currentDayOfYiJue: peiKuanOfNoCarOfGuangDong.toDayYiJue,
         currentYearOfYiJue: (peiKuanOfNoCarOfGuangDong.yiJue2016 + peiKuanOfNoCarOfGuangDong.yiJue2017) - peiKuanOfNoCarOfGuangDong.peiKuanYiJue2016,
 
-        currentDayOfWeiJue: (peiKuanOfNoCarOfGuangDong.weiJue2016 + peiKuanOfNoCarOfGuangDong.weiJue2017) - peiKuanOfNoCarOfGuangDong.peiKuanWeiJue2016,
+        currentDayOfWeiJue: peiKuanOfNoCarOfGuangDong.toDayWeiJue,
         currentYearOfWeiJue: (peiKuanOfNoCarOfGuangDong.weiJue2016 + peiKuanOfNoCarOfGuangDong.weiJue2017) - peiKuanOfNoCarOfGuangDong.peiKuanWeiJue2016
       }
 
@@ -936,23 +940,27 @@ export default {
     const self = this
 
     /* baoFei */
-    const dataSetIdOfBaoFei = 'cc9875eb-735b-48ba-bd97-8189e2244151'
+    const dataSetIdOfBaoFei = '9357ac9d-2e2d-4fd0-8973-41dd1d182248'
     // const dataSetIdOfBaoFei = 'db71de05-d8ac-43e3-be54-681f0843aa20'
+    // const dataSetIdOfBaoFei = '4893be75-7ee7-4e4f-bd18-f1c4f5773967'
     self.dataSetOfBaoFei = await self.fetchDataSetById(dataSetIdOfBaoFei)
 
     /* jinDu */
-    const dataSetIdOfJinDu = 'cbee4eb0-bf5f-4cbc-905c-f4571bb968b9'
+    const dataSetIdOfJinDu = '629b5847-126e-4e4c-87d8-8e8c49c70e8f'
     // const dataSetIdOfJinDu = 'c4cc2733-3a8b-4f0f-9cd2-d101d5358960'
+    // const dataSetIdOfJinDu = '93696ca9-774c-4317-9203-ede759863331'
     self.dataSetOfJinDu = await self.fetchDataSetById(dataSetIdOfJinDu)
 
     /* muBiao */
-    const dataSetIdOfMuBiao = '6977f9c3-ae23-4977-ae44-0c3d5f4de846'
+    const dataSetIdOfMuBiao = '4184f3f6-bdb3-48a7-b348-0c234237f462'
     // const dataSetIdOfMuBiao = '5e7496f6-8dcf-4e1d-b754-2f27fd813aac'
+    // const dataSetIdOfMuBiao = 'e5514a38-4435-4e87-829b-db525533e2f5'
     self.dataSetOfMuBiao = await self.fetchDataSetById(dataSetIdOfMuBiao)
 
     /* peiKuan */
-    const dataSetIdOfPeiKuan = '0474a9d4-6b23-49ca-87dd-bffa0bcedffd'
+    const dataSetIdOfPeiKuan = '2bfbfdb4-e18a-4206-85f4-c05b244509ab'
     // const dataSetIdOfPeiKuan = 'f6645a86-89cc-4445-a22d-c0d1e7b5c7f0'
+    // const dataSetIdOfPeiKuan = '94c54ee7-25fc-4149-a2e3-3ffefff54ac5'
     self.dataSetOfPeiKuan = await self.fetchDataSetById(dataSetIdOfPeiKuan)
 
     self.parseDataOfBaoFei()
