@@ -841,8 +841,6 @@ export default {
         currentYearOfWeiJue: self.agencyDataOfShenZhen.peiKuan.car.currentYearOfWeiJue + self.agencyDataOfShenZhen.peiKuan.noCar.currentYearOfWeiJue + self.agencyDataOfShenZhen.peiKuan.online.currentYearOfWeiJue
       }
 
-      console.log('self.agencyDataOfShenZhen.peiKuan. = ', self.agencyDataOfShenZhen.peiKuan)
-
       /* agencyDataOfXinJiang */
       const peiKuanOfCarOfXinJiang =  self.getDataByKeyOfPeiKuan('新疆分公司', '车险')
       const peiKuanOfNoCarOfXinJiang =  self.getDataByKeyOfPeiKuan('新疆分公司', '非车（含互联网）')
@@ -939,18 +937,22 @@ export default {
 
     /* baoFei */
     const dataSetIdOfBaoFei = 'cc9875eb-735b-48ba-bd97-8189e2244151'
+    // const dataSetIdOfBaoFei = 'db71de05-d8ac-43e3-be54-681f0843aa20'
     self.dataSetOfBaoFei = await self.fetchDataSetById(dataSetIdOfBaoFei)
 
     /* jinDu */
     const dataSetIdOfJinDu = 'cbee4eb0-bf5f-4cbc-905c-f4571bb968b9'
+    // const dataSetIdOfJinDu = 'c4cc2733-3a8b-4f0f-9cd2-d101d5358960'
     self.dataSetOfJinDu = await self.fetchDataSetById(dataSetIdOfJinDu)
 
     /* muBiao */
     const dataSetIdOfMuBiao = '6977f9c3-ae23-4977-ae44-0c3d5f4de846'
+    // const dataSetIdOfMuBiao = '5e7496f6-8dcf-4e1d-b754-2f27fd813aac'
     self.dataSetOfMuBiao = await self.fetchDataSetById(dataSetIdOfMuBiao)
 
     /* peiKuan */
     const dataSetIdOfPeiKuan = '0474a9d4-6b23-49ca-87dd-bffa0bcedffd'
+    // const dataSetIdOfPeiKuan = 'f6645a86-89cc-4445-a22d-c0d1e7b5c7f0'
     self.dataSetOfPeiKuan = await self.fetchDataSetById(dataSetIdOfPeiKuan)
 
     self.parseDataOfBaoFei()
@@ -958,10 +960,13 @@ export default {
   },
   mounted () {
     const self = this
-    $(window).resize(function() {
+    $(window).resize(() => {
       self.computedTableWidth()
     });
-    self.computedTableWidth()
+
+    setTimeout(() => {
+      self.computedTableWidth()
+    }, 200)
 
   }
 }
@@ -991,6 +996,8 @@ export default {
   font-size: 80px;
   color: #c0504d;
   line-height: 100%;
+  font-family: Haettenschweiler;
+  letter-spacing: 5px;
 }
 .daily-report-title .daily-report-title-secondary {
   font-size: 50px;
@@ -1033,19 +1040,12 @@ export default {
   text-align: left;
   font-size: 18px;
   font-weight: bolder;
-  padding-left: 26px;
-  padding-left: 3%;
+  padding-left: 5%;
   margin-bottom: 10px;
 }
 
 .daily-report-description p {
   margin: 5px 0;
-}
-.daily-report-description p:first-child {
-  text-indent: 46px;
-}
-.daily-report-description p:nth-child(2) {
-  text-indent: 22px;
 }
 
 .daily-report-table {
