@@ -433,7 +433,7 @@ export default {
     return {
       currentYear: moment().format('YYYY'),
       currentDate: moment().format('MMM Do'),
-      currentDayOfYear: moment('2017-03-20').format('DDD'),
+      currentDayOfYear: moment().format('DDD'),
 
       showWeek: false,
 
@@ -616,7 +616,7 @@ export default {
       const muBiaoOfOnline = self.getDataByKeyOfMuBiao('互联网业务')
 
       /* jinDu */
-      const jinDuOfToDay = self.getDataByKeyOfJinDu('2017-03-20')
+      const jinDuOfToDay = self.getDataByKeyOfJinDu()
 
       /* divisor */
       const divisorOfShenZhen = muBiaoOfShenZhen * jinDuOfToDay
@@ -940,27 +940,27 @@ export default {
     const self = this
 
     /* baoFei */
-    const dataSetIdOfBaoFei = '9357ac9d-2e2d-4fd0-8973-41dd1d182248'
+    // const dataSetIdOfBaoFei = '9357ac9d-2e2d-4fd0-8973-41dd1d182248'
     // const dataSetIdOfBaoFei = 'db71de05-d8ac-43e3-be54-681f0843aa20'
-    // const dataSetIdOfBaoFei = '4893be75-7ee7-4e4f-bd18-f1c4f5773967'
+    const dataSetIdOfBaoFei = '4893be75-7ee7-4e4f-bd18-f1c4f5773967'
     self.dataSetOfBaoFei = await self.fetchDataSetById(dataSetIdOfBaoFei)
 
     /* jinDu */
-    const dataSetIdOfJinDu = '629b5847-126e-4e4c-87d8-8e8c49c70e8f'
+    // const dataSetIdOfJinDu = '629b5847-126e-4e4c-87d8-8e8c49c70e8f'
     // const dataSetIdOfJinDu = 'c4cc2733-3a8b-4f0f-9cd2-d101d5358960'
-    // const dataSetIdOfJinDu = '93696ca9-774c-4317-9203-ede759863331'
+    const dataSetIdOfJinDu = '93696ca9-774c-4317-9203-ede759863331'
     self.dataSetOfJinDu = await self.fetchDataSetById(dataSetIdOfJinDu)
 
     /* muBiao */
-    const dataSetIdOfMuBiao = '4184f3f6-bdb3-48a7-b348-0c234237f462'
+    // const dataSetIdOfMuBiao = '4184f3f6-bdb3-48a7-b348-0c234237f462'
     // const dataSetIdOfMuBiao = '5e7496f6-8dcf-4e1d-b754-2f27fd813aac'
-    // const dataSetIdOfMuBiao = 'e5514a38-4435-4e87-829b-db525533e2f5'
+    const dataSetIdOfMuBiao = 'e5514a38-4435-4e87-829b-db525533e2f5'
     self.dataSetOfMuBiao = await self.fetchDataSetById(dataSetIdOfMuBiao)
 
     /* peiKuan */
-    const dataSetIdOfPeiKuan = '2bfbfdb4-e18a-4206-85f4-c05b244509ab'
+    // const dataSetIdOfPeiKuan = '2bfbfdb4-e18a-4206-85f4-c05b244509ab'
     // const dataSetIdOfPeiKuan = 'f6645a86-89cc-4445-a22d-c0d1e7b5c7f0'
-    // const dataSetIdOfPeiKuan = '94c54ee7-25fc-4149-a2e3-3ffefff54ac5'
+    const dataSetIdOfPeiKuan = '94c54ee7-25fc-4149-a2e3-3ffefff54ac5'
     self.dataSetOfPeiKuan = await self.fetchDataSetById(dataSetIdOfPeiKuan)
 
     self.parseDataOfBaoFei()
@@ -1001,14 +1001,14 @@ export default {
   margin-top: -30px;
 }
 .daily-report-title .daily-report-title-primary {
-  font-size: 80px;
+  font-size: 106px;
   color: #c0504d;
   line-height: 100%;
   font-family: Haettenschweiler;
   letter-spacing: 5px;
 }
 .daily-report-title .daily-report-title-secondary {
-  font-size: 50px;
+  font-size: 53px;
   color: #1f497d;
 }
 .daily-report-title .daily-report-title-tips {
@@ -1046,7 +1046,7 @@ export default {
 
 .daily-report-description {
   text-align: left;
-  font-size: 18px;
+  font-size: 21px;
   font-weight: bolder;
   padding-left: 5%;
   margin-bottom: 10px;
@@ -1143,7 +1143,7 @@ td.border-bottom {
 .table-category,
 .table-data {
   display: inline-block;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .table-data {
@@ -1163,10 +1163,10 @@ td.border-bottom {
 }
 
 .table-category .table-category-header td {
-  height: 60px;
+  height: 68px;
 }
 .table-data .table-data-header-primary td {
-  height: 22px;
+  height: 25px;
 }
 .table-data .table-data-header-secondary td {
   height: 38px;
