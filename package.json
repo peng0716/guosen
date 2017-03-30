@@ -9,6 +9,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "babel-polyfill": "^6.23.0",
     "bluebird": "^3.5.0",
     "fetch-polyfill": "^0.8.2",
     "jquery": "^3.2.1",

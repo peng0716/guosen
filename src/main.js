@@ -2,6 +2,8 @@
 /* reset css */
 import 'normalize-css/normalize.css'
 
+import 'babel-polyfill'
+
 import Vue from 'vue'
 import App from './App'
 import router from './router'
