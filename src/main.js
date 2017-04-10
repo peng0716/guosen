@@ -1,6 +1,7 @@
 
 /* reset css */
 import 'normalize-css/normalize.css'
+import 'element-ui/lib/theme-default/index.css'
 
 import 'babel-polyfill'
 
@@ -19,8 +20,24 @@ import 'moment/locale/zh-cn'
 moment.locale('zh-cn')
 window.moment = moment
 
+import {
+  Row,
+  Col,
+  Select,
+  Option,
+  DatePicker,
+  Button,
+  Loading
+} from 'element-ui'
+Vue.use(Row)
+Vue.use(Col)
+Vue.use(Select)
+Vue.use(Option)
+Vue.use(DatePicker)
+Vue.use(Button)
+
 Vue.prototype.formatContent = (aContent, aIsPercentage) => {
-  if (! aContent) {
+  if (! aContent || aContent == 'null' || aContent == null || aContent == NaN) {
     return 0
   }
 
@@ -28,7 +45,7 @@ Vue.prototype.formatContent = (aContent, aIsPercentage) => {
     aContent *= 100
   }
 
-  return aContent.toFixed(1)
+  return parseFloat(aContent).toFixed(1)
 }
 
 /* eslint-disable no-new */
