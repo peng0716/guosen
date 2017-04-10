@@ -940,27 +940,27 @@ export default {
     const self = this
 
     /* baoFei */
-    // const dataSetIdOfBaoFei = '9357ac9d-2e2d-4fd0-8973-41dd1d182248'
-    // const dataSetIdOfBaoFei = 'db71de05-d8ac-43e3-be54-681f0843aa20'
+    // const dataSetIdOfBaoFei = '37b09342-b51f-48ec-a236-95278d0d77c4'
     const dataSetIdOfBaoFei = '4893be75-7ee7-4e4f-bd18-f1c4f5773967'
+    // const dataSetIdOfBaoFei = 'e158b51b-db41-476c-b2f7-6a971d7b59c2'
     self.dataSetOfBaoFei = await self.fetchDataSetById(dataSetIdOfBaoFei)
 
     /* jinDu */
-    // const dataSetIdOfJinDu = '629b5847-126e-4e4c-87d8-8e8c49c70e8f'
-    // const dataSetIdOfJinDu = 'c4cc2733-3a8b-4f0f-9cd2-d101d5358960'
+    // const dataSetIdOfJinDu = 'a56f820d-7e9c-4c7d-9cd6-03adb56fb8a1'
     const dataSetIdOfJinDu = '93696ca9-774c-4317-9203-ede759863331'
+    // const dataSetIdOfJinDu = '2b3a00f6-2ed0-4ea9-8547-d71a7e55d2f2'
     self.dataSetOfJinDu = await self.fetchDataSetById(dataSetIdOfJinDu)
 
     /* muBiao */
-    // const dataSetIdOfMuBiao = '4184f3f6-bdb3-48a7-b348-0c234237f462'
-    // const dataSetIdOfMuBiao = '5e7496f6-8dcf-4e1d-b754-2f27fd813aac'
+    // const dataSetIdOfMuBiao = '1af83a31-5f2a-454a-a24a-9fb4c253e235'
     const dataSetIdOfMuBiao = 'e5514a38-4435-4e87-829b-db525533e2f5'
+    // const dataSetIdOfMuBiao = '42bf9fe8-3c0a-43fc-ba23-e7f2fc21c200'
     self.dataSetOfMuBiao = await self.fetchDataSetById(dataSetIdOfMuBiao)
 
     /* peiKuan */
-    // const dataSetIdOfPeiKuan = '2bfbfdb4-e18a-4206-85f4-c05b244509ab'
-    // const dataSetIdOfPeiKuan = 'f6645a86-89cc-4445-a22d-c0d1e7b5c7f0'
+    // const dataSetIdOfPeiKuan = '73005be3-81f4-4917-b7cb-6597ae27d8a3'
     const dataSetIdOfPeiKuan = '94c54ee7-25fc-4149-a2e3-3ffefff54ac5'
+    // const dataSetIdOfPeiKuan = 'de37a96a-302d-4678-8758-7072a982db63'
     self.dataSetOfPeiKuan = await self.fetchDataSetById(dataSetIdOfPeiKuan)
 
     self.parseDataOfBaoFei()
@@ -1082,7 +1082,7 @@ table {
 td {
   border: 1px solid #000;
   text-align: center;
-  padding: 2px 6px;
+  padding: 0 6px;
   height: 22px;
   background-color: #eeece1;
 }
@@ -1166,10 +1166,10 @@ td.border-bottom {
   height: 68px;
 }
 .table-data .table-data-header-primary td {
-  height: 25px;
+  height: 29px;
 }
 .table-data .table-data-header-secondary td {
-  height: 38px;
+  height: 39px;
 }
 .table-data tr:nth-child(6) td,
 .table-data tr:nth-child(9) td,
