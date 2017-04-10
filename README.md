@@ -1,4 +1,4 @@
-# qhp-daily-report
+# qhp-reports
 
 > A Vue.js project
 

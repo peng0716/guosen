@@ -44,10 +44,10 @@ const startRequest = (url, data) => {
 const login = () => {
   const url = `${API_BASE_URL}/mort/login`
   const request = initRequestHeader('post', {
-    email: "zhangyi@bigeyedata.com",
-    password: "password",
-    // email: "support@bigeyedata.com",
-    // password: "admin"
+    // email: "zhangyi@bigeyedata.com",
+    // password: "password",
+    email: "support@bigeyedata.com",
+    password: "admin"
   })
   return startRequest(url, request)
 

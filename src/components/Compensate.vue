@@ -238,7 +238,8 @@ export default {
       CASE_STATE: '',
       CASE_STATE_LIST: [],
 
-      dataSetId: 'bf164b90-7854-4aed-8d77-223b9de0c8f1',
+      // dataSetId: 'bf164b90-7854-4aed-8d77-223b9de0c8f1', /* Development */
+      dataSetId: 'ebdb35ad-7010-4c1e-9ba6-bc11625d5465', /* Production */
       dataSetTableName: '',
       dateSetFields: [],
       dateRange: [
@@ -707,6 +708,7 @@ export default {
         moment(currentMaxDate).format('YYYY-MM-DD')
       ]
     }
+    self.onSearch()
   },
   beforeMount() {
     const self = this

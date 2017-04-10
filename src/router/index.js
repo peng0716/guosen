@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Index from '@/components/Index'
+import Daily from '@/components/Daily'
 import Compensate from '@/components/Compensate'
 
 Vue.use(Router)
@@ -9,8 +9,13 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Index',
-      component: Index
+      name: 'Daily',
+      component: Daily
+    },
+    {
+      path: '/daily',
+      name: 'Daily',
+      component: Daily
     },
     {
       path: '/compensate',
