@@ -564,10 +564,10 @@ export default {
     }
   },
   methods: {
-    async fetchFilterListByDisplayName(aDisplayName) {
+    async fetchFilterListByFieldName(aFieldName) {
       const self = this
 
-      const codeName = self.getFieldCodeNameByDisplayName(aDisplayName)
+      const codeName = self.getFieldCodeNameByFieldName(aFieldName)
 
       const { rows = [] } = await post(`/mort/analysis-result/sql`, {
         'dataSetId': self.dataSetId,
@@ -585,18 +585,18 @@ export default {
 
       return filterList
     },
-    getFieldCodeNameByDisplayName(aDisplayName) {
+    getFieldCodeNameByFieldName(aFieldName) {
       const self = this
 
       for (let i = 0, count = self.dateSetFields.length; i < count; i++) {
         const dateSetField = self.dateSetFields[i]
 
-        if (dateSetField.displayName == aDisplayName) {
+        if (dateSetField.fieldName == aFieldName) {
           return dateSetField.codeName
         }
       }
 
-      console.log(`displayName '${aDisplayName}' not found`)
+      console.log(`FieldName '${aFieldName}' not found`)
     },
 
     onDateChange(aText) {
@@ -608,15 +608,15 @@ export default {
 
       let loadingInstance = Loading.service({ fullscreen: true });
 
-      const CodeName_TYPE_CNM = self.getFieldCodeNameByDisplayName('TYPE_CNM')
-      const CodeName_PROJECT_CNM = self.getFieldCodeNameByDisplayName('PROJECT_CNM')
-      const CodeName_ASSESS_DT = self.getFieldCodeNameByDisplayName('ASSESS_DT')
-      const CodeName_INDEX_VALUE = self.getFieldCodeNameByDisplayName('INDEX_VALUE')
-      const CodeName_DPT_CNM = self.getFieldCodeNameByDisplayName('DPT_CNM_LVL2')
-      const CodeName_BSNS_TYP_CNM = self.getFieldCodeNameByDisplayName('BSNS_TYP_CNM')
-      const CodeName_PROD_CNM = self.getFieldCodeNameByDisplayName('PROD_CNM')
-      const CodeName_RGST_CNM = self.getFieldCodeNameByDisplayName('RGST_CNM')
-      const CodeName_CASE_STATE = self.getFieldCodeNameByDisplayName('CASE_STATE')
+      const CodeName_TYPE_CNM = self.getFieldCodeNameByFieldName('TYPE_CNM')
+      const CodeName_PROJECT_CNM = self.getFieldCodeNameByFieldName('PROJECT_CNM')
+      const CodeName_ASSESS_DT = self.getFieldCodeNameByFieldName('ASSESS_DT')
+      const CodeName_INDEX_VALUE = self.getFieldCodeNameByFieldName('INDEX_VALUE')
+      const CodeName_DPT_CNM = self.getFieldCodeNameByFieldName('DPT_CNM_LVL2')
+      const CodeName_BSNS_TYP_CNM = self.getFieldCodeNameByFieldName('BSNS_TYP_CNM')
+      const CodeName_PROD_CNM = self.getFieldCodeNameByFieldName('PROD_CNM')
+      const CodeName_RGST_CNM = self.getFieldCodeNameByFieldName('RGST_CNM')
+      const CodeName_CASE_STATE = self.getFieldCodeNameByFieldName('CASE_STATE')
 
       let whereAddition = ''
       if (self.DPT_CNM != '') {
@@ -687,13 +687,13 @@ export default {
     self.dataSetTableName = await get(`/mort/data-sets/${self.dataSetId}/table`)
     self.dateSetFields = await get(`/mort/data-sets/${self.dataSetId}/fields`)
 
-    self.DPT_CNM_LIST = await self.fetchFilterListByDisplayName('DPT_CNM_LVL2')
-    self.BSNS_TYP_CNM_LIST = await self.fetchFilterListByDisplayName('BSNS_TYP_CNM')
-    self.PROD_CNM_LIST = await self.fetchFilterListByDisplayName('PROD_CNM')
-    self.RGST_CNM_LIST = await self.fetchFilterListByDisplayName('RGST_CNM')
-    self.CASE_STATE_LIST = await self.fetchFilterListByDisplayName('CASE_STATE')
+    self.DPT_CNM_LIST = await self.fetchFilterListByFieldName('DPT_CNM_LVL2')
+    self.BSNS_TYP_CNM_LIST = await self.fetchFilterListByFieldName('BSNS_TYP_CNM')
+    self.PROD_CNM_LIST = await self.fetchFilterListByFieldName('PROD_CNM')
+    self.RGST_CNM_LIST = await self.fetchFilterListByFieldName('RGST_CNM')
+    self.CASE_STATE_LIST = await self.fetchFilterListByFieldName('CASE_STATE')
 
-    const CodeName_ASSESS_DT = self.getFieldCodeNameByDisplayName('ASSESS_DT')
+    const CodeName_ASSESS_DT = self.getFieldCodeNameByFieldName('ASSESS_DT')
     const { rows = [] } = await post(`/mort/analysis-result/sql`, {
       'dataSetId': self.dataSetId,
       'sql': `select min(${CodeName_ASSESS_DT}), max(${CodeName_ASSESS_DT}) from ${self.dataSetTableName}`
