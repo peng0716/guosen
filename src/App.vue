@@ -19,16 +19,12 @@ export default {
   padding: 0;
 }
 body {
-  font-family: Microsoft Yahei, 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: myYaHei, Microsoft Yahei, 'Avenir', Helvetica, Arial, sans-serif;
   font-size: 12px;
   background-color: #dce6f1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #0f1317;
   line-height: normal;
-}
-@font-face {
-  font-family: 'myHaettenschweiler';
-  src: url('assets/fonts/Haettenschweiler.ttf') format('truetype');
 }
 </style>

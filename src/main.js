@@ -2,6 +2,7 @@
 /* reset css */
 import 'normalize-css/normalize.css'
 import 'element-ui/lib/theme-default/index.css'
+import './assets/css/style.css'
 
 import 'babel-polyfill'
 

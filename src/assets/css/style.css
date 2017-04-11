@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'myHaettenschweiler';
+  src: url('../fonts/Haettenschweiler.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'myYaHei';
+  src: url('../fonts/MicrosoftYahei.ttf') format('truetype');
+}
