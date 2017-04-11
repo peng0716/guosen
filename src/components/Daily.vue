@@ -928,7 +928,7 @@ export default {
 
       self.total.peiKuan.final = {
         currentDayOfYiJue: self.total.peiKuan.car.currentDayOfYiJue + self.total.peiKuan.noCar.currentDayOfYiJue,
-        currentYearOfYiJue: self.total.peiKuan.car.currentDayOfYiJue + self.total.peiKuan.noCar.currentDayOfYiJue,
+        currentYearOfYiJue: self.total.peiKuan.car.currentYearOfYiJue + self.total.peiKuan.noCar.currentYearOfYiJue,
 
         currentDayOfWeiJue: self.total.peiKuan.car.currentDayOfWeiJue + self.total.peiKuan.noCar.currentDayOfWeiJue,
         currentYearOfWeiJue: self.total.peiKuan.car.currentYearOfWeiJue + self.total.peiKuan.noCar.currentYearOfWeiJue
