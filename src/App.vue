@@ -27,4 +27,8 @@ body {
   color: #0f1317;
   line-height: normal;
 }
+@font-face {
+  font-family: 'myHaettenschweiler';
+  src: url('assets/fonts/Haettenschweiler.ttf') format('truetype');
+}
 </style>

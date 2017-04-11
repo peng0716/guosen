@@ -1004,7 +1004,7 @@ export default {
   font-size: 106px;
   color: #c0504d;
   line-height: 100%;
-  font-family: Haettenschweiler;
+  font-family: myHaettenschweiler;
   letter-spacing: 5px;
 }
 .daily-report-title .daily-report-title-secondary {
