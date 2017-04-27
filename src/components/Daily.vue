@@ -428,7 +428,7 @@
 import { get } from '../service/Request'
 
 export default {
-  name: 'index',
+  name: 'daily',
   data () {
     return {
       currentYear: moment().format('YYYY'),

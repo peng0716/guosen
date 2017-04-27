@@ -21,7 +21,6 @@ export default {
 body {
   font-family: myYaHei, Microsoft Yahei, 'Avenir', Helvetica, Arial, sans-serif;
   font-size: 12px;
-  background-color: #dce6f1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #0f1317;

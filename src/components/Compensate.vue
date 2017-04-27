@@ -239,7 +239,7 @@ export default {
       CASE_STATE_LIST: [],
 
       // dataSetId: 'bf164b90-7854-4aed-8d77-223b9de0c8f1', /* Development */
-      dataSetId: 'ebdb35ad-7010-4c1e-9ba6-bc11625d5465', /* Production */
+      dataSetId: 'df0694ad-10ea-47a9-b462-c26abe39d675', /* Production */
       dataSetTableName: '',
       dateSetFields: [],
       dateRange: [
@@ -586,6 +586,7 @@ export default {
       return filterList
     },
     getFieldCodeNameByFieldName(aFieldName) {
+        debugger
       const self = this
 
       for (let i = 0, count = self.dateSetFields.length; i < count; i++) {
@@ -686,6 +687,7 @@ export default {
 
     self.dataSetTableName = await get(`/mort/data-sets/${self.dataSetId}/table`)
     self.dateSetFields = await get(`/mort/data-sets/${self.dataSetId}/fields`)
+    console.log('dateSetFields',self.dateSetFields)
 
     self.DPT_CNM_LIST = await self.fetchFilterListByFieldName('DPT_CNM_LVL2')
     self.BSNS_TYP_CNM_LIST = await self.fetchFilterListByFieldName('BSNS_TYP_CNM')

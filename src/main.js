@@ -46,7 +46,20 @@ Vue.prototype.formatContent = (aContent, aIsPercentage) => {
     aContent *= 100
   }
 
-  return parseFloat(aContent).toFixed(1)
+  return parseFloat(aContent).toFixed(2)
+}
+
+Vue.prototype.isInteger = (obj) => {
+  return obj%1 === 0
+}
+
+Vue.prototype.toThousands = (num)  =>{
+  num = num.toString()
+  if(num.indexOf('.') > -1){
+    return (num || 0).replace(/(\d{1,2})(?=(\d{3})+\.)/g,'$1,');
+  }else{
+    return (num || 0).replace(/(\d)(?=(?:\d{3})+$)/g, '$1,');
+  }
 }
 
 /* eslint-disable no-new */
