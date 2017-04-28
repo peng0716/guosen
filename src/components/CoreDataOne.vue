@@ -74,7 +74,27 @@
                   </thead>
                   <tbody>
                   <tr v-for="(n, index) in 10" class="">
-                    <td v-if="index == 0">
+                    <td>
+                      <div class="cell">
+                        &nbsp;{{ statistics[index] ? statistics[index][0] : '' }}
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell">
+                        {{ statistics[index] ? statistics[index][1] : '' }}
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell">
+                        {{ statistics[index] ? statistics[index][2] : '' }}
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell" :class="statisticsColor[index] >= 0 ? 'colorRed' : 'colorGreen'">
+                        {{ statistics[index] ? statistics[index][3] : '' }}
+                      </div>
+                    </td>
+                    <!--<td v-if="index == 0">
                       <div class="cell">
                         &nbsp;{{ statistics[index].project }}
                       </div>
@@ -135,14 +155,8 @@
                       </div>
                     </td>
                     <td>
-                      <!--<div class="cell" :class="statistics[index].endOfTotal >= 0 ? 'colorRed' : 'colorGreen'">-->
                       <div class="cell" :class="statistics[index].endOfTotal >= 0 ? 'colorRed' : 'colorGreen'">
                         {{ statistics[index].yearOpeningBalance }}
-                      </div>
-                    </td>
-                    <!--<td>
-                      <div class="cell">
-                        {{ formatContent(statistics[index].yearOpeningBalance) }}
                       </div>
                     </td>-->
                   </tr>
@@ -200,7 +214,7 @@
 
         //dataSetId: 'a59ba21e-18ea-459d-a953-409588ac2789', /* Development */
         //dataSetId2: '06728b0c-12cf-47b5-a68c-62b2a27cac28', /* Development */
-        dataSetId: '480af8c2-5aca-41fc-925e-1f0514e72187', /* Production */
+        dataSetId: '213a2497-3641-497c-9ead-fe409996bd00', /* Production */
         dataSetId2: '56df44a9-da81-4cc6-98e7-5a15bccd5ac5', /* Production */
         dataSetTableName: '',
         dateSetFields: [],
@@ -219,19 +233,21 @@
 
         fullscreenLoading: false,
 
-        /*pickerOptions: {
-          disabledDate(time) {
-            return (time.getTime() < self.minDate) || (time.getTime() > self.maxDate)
-          },
-          onPick(aDateObj) {
-            self.dateRange = [
-              moment(aDateObj.minDate).format('YYYY-MM-DD'),
-              moment(aDateObj.maxDate).format('YYYY-MM-DD')
-            ]
-          }
-        },*/
-
+        statisticsColor:[],
         statistics: [
+          ['总注册用户数'],
+          ['总交易用户数'],
+          ['总转换用户数'],
+          ['动态有效客户数'],
+          ['总成交量(亿元)'],
+          ['成交量占比'],
+          ['总手续费(万元)'],
+          ['手续费占比'],
+          ['总有效委托笔数'],
+          ['有效委托笔数占比']
+        ]
+
+        /*statistics: [
           {
             project: '总注册用户数',
             type: '无资料报案件数',
@@ -312,10 +328,10 @@
             endOfTotal: 0,
             yearOpeningBalance: 0
           }
-        ]
+        ]*/
       }
     },
-    methods: {
+    /*methods: {
       async fetchFilterListByFieldName(aFieldName) {
         const self = this
 
@@ -419,7 +435,7 @@
           self.statistics[index].yearOpeningBalance = self.statistics[index].yearOpeningBalance + '%'
         }
       },
-    },
+    },*/
     async created() {
       const self = this
 
@@ -440,6 +456,7 @@
       self.preTransactionDate = await post(`/mort/function-executions`,preTransaction)
       self.preTransactionDate2 = await post(`/mort/function-executions`,preTransaction2)
 
+      let f23 = '',f24 = '',f27 = '',f4 = '',f37 = '',f5 = '',f6 = '',f7 = '',f8 = '',f9 = ''
       for(let i = 0; i < self.dateSetFields.length;i++){
         if(self.dateSetFields[i].fieldName == 'stat_date'){
             self.codeNameDate = self.dateSetFields[i].codeName
@@ -457,18 +474,167 @@
           self.soft_alias = self.dateSetFields[i].codeName
         }
 
+        if(self.dateSetFields[i].fieldName == 'f23'){
+          f23 = self.dateSetFields[i].codeName
+        }
+
+        if(self.dateSetFields[i].fieldName == 'f24'){
+          f24 = self.dateSetFields[i].codeName
+        }
+
+        if(self.dateSetFields[i].fieldName == 'f27'){
+          f27 = self.dateSetFields[i].codeName
+        }
+
+        if(self.dateSetFields[i].fieldName == 'f4'){
+          f4 = self.dateSetFields[i].codeName
+        }
+
+        if(self.dateSetFields[i].fieldName == 'f37'){
+          f37 = self.dateSetFields[i].codeName
+        }
+
+        if(self.dateSetFields[i].fieldName == 'f5'){
+          f5 = self.dateSetFields[i].codeName
+        }
+
+        if(self.dateSetFields[i].fieldName == 'f6'){
+          f6 = self.dateSetFields[i].codeName
+        }
+
+        if(self.dateSetFields[i].fieldName == 'f7'){
+          f7 = self.dateSetFields[i].codeName
+        }
+
+        if(self.dateSetFields[i].fieldName == 'f8'){
+          f8 = self.dateSetFields[i].codeName
+        }
+
+        if(self.dateSetFields[i].fieldName == 'f9'){
+          f9 = self.dateSetFields[i].codeName
+        }
+
       }
 
-      for(let i = 0; i < self.dateSetFields2.length;i++){
-        if(self.dateSetFields2[i].fieldName == 'dcdate'){
-          self.codeNameDate2 = self.dateSetFields2[i].codeName
+      let z_activeusers = ''
+      for(let j = 0; j < self.dateSetFields2.length;j++){
+        if(self.dateSetFields2[j].fieldName == 'dcdate'){
+          self.codeNameDate2 = self.dateSetFields2[j].codeName
         }
-        if(self.dateSetFields2[i].fieldName == 'softver'){
-          self.softver = self.dateSetFields2[i].codeName
+        if(self.dateSetFields2[j].fieldName == 'softver'){
+          self.softver = self.dateSetFields2[j].codeName
+        }
+        if(self.dateSetFields2[j].fieldName == 'z_activeusers'){
+          z_activeusers = self.dateSetFields2[j].codeName
         }
       }
 
-      self.f23 = await self.fetchFilterListByFieldName('f23')
+      /*let textSql
+      let textSql2
+      if(aFieldName != 'z_activeusers'){
+        textSql = {
+          'dataSetId': self.dataSetId,
+          'sql': `select ${codeName} from ${self.dataSetTableName} where ${self.codeNameDate} = '${self.preTransactionDate}' and ${self.soft_ver} = '@_all' and ${self.device_ver} = '@_all' and ${self.soft_alias} = '@_all' group by ${codeName}`
+        }
+
+        textSql2 = {
+          'dataSetId': self.dataSetId,
+          'sql': `select ${codeName} from ${self.dataSetTableName} where ${self.codeNameDate} = '${self.preTransactionDate2}' and ${self.soft_ver} = '@_all' and ${self.device_ver} = '@_all' and ${self.soft_alias} = '@_all' group by ${codeName}`
+        }
+      }else{
+        textSql = {
+          'dataSetId': self.dataSetId2,
+          'sql': `select ${codeName} from ${self.dataSetTableName2} where ${self.codeNameDate2} = '${self.preTransactionDate}' and ${self.softver} = '小计' group by ${codeName}`
+        }
+
+        textSql2 = {
+          'dataSetId': self.dataSetId2,
+          'sql': `select ${codeName} from ${self.dataSetTableName2} where ${self.codeNameDate2} = '${self.preTransactionDate2}' and ${self.softver} = '小计' group by ${codeName}`
+        }
+      }*/
+
+      const tradingDaydata = await post(`/mort/analysis-result/sql`, {
+        'dataSetId': self.dataSetId,
+        'sql': `select ${f23},${f24},${f27},${f4},${f37},${f5},${f6},${f7},${f8},${f9} from ${self.dataSetTableName} where ${self.codeNameDate} = '${self.preTransactionDate}' and ${self.soft_ver} = '@_all' and ${self.device_ver} = '@_all' and ${self.soft_alias} = '@_all'`
+      })
+      const tradingDaydata2 = await post(`/mort/analysis-result/sql`, {
+        'dataSetId': self.dataSetId,
+        'sql': `select ${f23},${f24},${f27},${f4},${f37},${f5},${f6},${f7},${f8},${f9} from ${self.dataSetTableName} where ${self.codeNameDate} = '${self.preTransactionDate2}' and ${self.soft_ver} = '@_all' and ${self.device_ver} = '@_all' and ${self.soft_alias} = '@_all'`
+      })
+
+      const tradingDaydata_2 = await post(`/mort/analysis-result/sql`, {
+        'dataSetId': self.dataSetId2,
+        'sql': `select ${z_activeusers} from ${self.dataSetTableName2} where ${self.codeNameDate2} = '${self.preTransactionDate}' and ${self.softver} = '小计'`
+      })
+      const tradingDaydata_2_1 = await post(`/mort/analysis-result/sql`, {
+        'dataSetId': self.dataSetId2,
+        'sql': `select ${z_activeusers} from ${self.dataSetTableName2} where ${self.codeNameDate2} = '${self.preTransactionDate2}' and ${self.softver} = '小计'`
+      })
+
+      /*动态有效客户数*/
+      tradingDaydata.rows[0].splice(3,0,tradingDaydata_2.rows[0][0])
+      tradingDaydata2.rows[0].splice(3,0,tradingDaydata_2_1.rows[0][0])
+      /*总成交量*/
+      tradingDaydata.rows[0][4] = tradingDaydata.rows[0][4] * 1
+      tradingDaydata2.rows[0][4] = tradingDaydata.rows[0][4] * 1
+
+      /*成交量占比 f5 / (f4 - f37)*/
+      tradingDaydata.rows[0].push(self.formatContent(tradingDaydata.rows[0][6] / (tradingDaydata.rows[0][4] - tradingDaydata.rows[0][5]) * 100))
+      tradingDaydata2.rows[0].push(self.formatContent(tradingDaydata2.rows[0][6] / (tradingDaydata2.rows[0][4] - tradingDaydata2.rows[0][5]) * 100))
+
+      /*手续费占比 f7 / f6*/
+      tradingDaydata.rows[0].push(self.formatContent(tradingDaydata.rows[0][8] / tradingDaydata.rows[0][7] * 100))
+      tradingDaydata2.rows[0].push(self.formatContent(tradingDaydata2.rows[0][8] / tradingDaydata2.rows[0][7] * 100))
+
+      /* 有效委托笔数占比 f9 / f8*/
+      tradingDaydata.rows[0].push(self.formatContent(tradingDaydata.rows[0][10] / tradingDaydata.rows[0][9] * 100))
+      tradingDaydata2.rows[0].push(self.formatContent(tradingDaydata2.rows[0][10] / tradingDaydata2.rows[0][9] * 100))
+
+      /*总成交量(亿元)*/
+      let yiLabel = tradingDaydata.rows[0][4].toString()
+      let yiLabel2 = tradingDaydata2.rows[0][4].toString()
+      tradingDaydata.rows[0][4] = yiLabel.substring(0,yiLabel.length - 8)
+      tradingDaydata2.rows[0][4] = yiLabel2.substring(0,yiLabel2.length - 8)
+
+      /*总手续费(万元)*/
+      let wanLabel = parseInt(tradingDaydata.rows[0][7]).toString()
+      let wanLabel2 = parseInt(tradingDaydata2.rows[0][7]).toString()
+      tradingDaydata.rows[0][7] = wanLabel.substring(0,wanLabel.length - 4)
+      tradingDaydata2.rows[0][7] = wanLabel2.substring(0,wanLabel2.length - 4)
+
+      tradingDaydata.rows[0].splice(5,2,tradingDaydata.rows[0][11])
+      tradingDaydata2.rows[0].splice(5,2,tradingDaydata2.rows[0][11])
+
+      tradingDaydata.rows[0].splice(7,1,tradingDaydata.rows[0][11])
+      tradingDaydata2.rows[0].splice(7,1,tradingDaydata2.rows[0][11])
+
+      tradingDaydata.rows[0].splice(9,0,tradingDaydata.rows[0][12])
+      tradingDaydata2.rows[0].splice(9,0,tradingDaydata2.rows[0][12])
+
+      for(let i = 0; i < 10;i++){
+        let sequentialValue = tradingDaydata.rows[0][i] - tradingDaydata2.rows[0][i]
+        if(!self.isInteger(sequentialValue)){
+          sequentialValue = sequentialValue.toFixed(2)
+        }
+
+        self.statisticsColor.push(sequentialValue)
+
+        if(i != 5 && i != 7 && i != 9){
+          self.statistics[i].push(parseInt(tradingDaydata.rows[0][i]))
+          self.statistics[i].push(parseInt(tradingDaydata2.rows[0][i]))
+        }else{
+          self.statistics[i].push(tradingDaydata.rows[0][i] + '%')
+          self.statistics[i].push(tradingDaydata2.rows[0][i] + '%')
+        }
+
+        if(i != 5 && i != 7 && i != 9){
+         self.statistics[i].push(sequentialValue)
+        }else{
+          self.statistics[i].push(sequentialValue + '%')
+        }
+      }
+
+      /*self.f23 = await self.fetchFilterListByFieldName('f23')
       self.dataSorting(self.f23,0)
       self.f24 = await self.fetchFilterListByFieldName('f24')
       self.dataSorting(self.f24,1)
@@ -481,7 +647,6 @@
       f4_init[0].value = f4_init[0].value.toString()
       f4_init[0].value = f4_init[0].value * 1
       f4_init[1].value = f4_init[1].value * 1
-      console.log('value=',f4_init[0].value)
       self.dataSorting(self.f4,4)
       self.f37 = await self.fetchFilterListByFieldName('f37')
       self.f5 = await self.fetchFilterListByFieldName('f5')
@@ -500,7 +665,7 @@
       self.f9 = await self.fetchFilterListByFieldName('f9')
       self.f89[0].label = self.formatContent(self.f9[0].label / self.f8[0].label * 100)
       self.f89[1].label = self.formatContent(self.f9[1].label / self.f8[1].label * 100)
-      self.dataSorting(self.f89,9)
+      self.dataSorting(self.f89,9)*/
     },
     beforeMount() {
       const self = this

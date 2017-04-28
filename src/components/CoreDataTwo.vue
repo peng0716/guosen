@@ -7,42 +7,6 @@
             <div class="select-text">核心数据－2</div>
           </el-col>
         </el-row>
-        <!--<el-row :gutter="20" class="blank-bottom">
-          <el-col :span="6">
-            <div class="select-text">案件类型</div>
-            <el-select v-model="CASE_STATE" filterable placeholder="请选择" size="small">
-              <el-option :label="'全部'" :value="''"></el-option>
-              <el-option
-                v-for="(item, index) in CASE_STATE_LIST"
-                v-if="item.value"
-                :label="item.label"
-                :value="item.value"
-                :key="index">
-              </el-option>
-            </el-select>
-          </el-col>
-          <el-col :span="6">
-            <div class="select-text">时间范围</div>
-            <el-date-picker
-              v-model="dateRange"
-              type="daterange"
-              placeholder="选择日期范围"
-              size="small"
-              :editable="false"
-              :picker-options="pickerOptions"
-              @change="onDateChange">
-            </el-date-picker>
-          </el-col>
-          <el-col :span="6">
-            <el-button
-              type="primary"
-              size="small"
-              class="button-offset"
-              @click="onSearch">
-              查询
-            </el-button>
-          </el-col>
-        </el-row>-->
         <el-row>
           <el-col :span="24">
             <div class="el-table el-table--fit el-table--border el-table--enable-row-transition">
@@ -74,66 +38,86 @@
                   </thead>
                   <tbody>
                   <tr v-for="(n, index) in 9" class="">
-                    <td v-if="index == 0">
+                    <td>
                       <div class="cell">
-                        &nbsp;{{ statistics[index].project }}
-                      </div>
-                    </td>
-                    <td v-if="index == 1">
-                      <div class="cell">
-                        &nbsp;{{ statistics[index].project }}
-                      </div>
-                    </td>
-                    <td v-if="index == 2">
-                      <div class="cell">
-                        {{ statistics[index].project }}
-                      </div>
-                    </td>
-                    <td v-if="index == 3">
-                      <div class="cell">
-                        {{ statistics[index].project }}
-                      </div>
-                    </td>
-                    <td v-if="index == 4">
-                      <div class="cell">
-                        {{ statistics[index].project }}
-                      </div>
-                    </td>
-                    <td v-if="index == 5">
-                      <div class="cell">
-                        {{ statistics[index].project }}
-                      </div>
-                    </td>
-                    <td v-if="index == 6">
-                      <div class="cell">
-                        {{ statistics[index].project }}
-                      </div>
-                    </td>
-                    <td v-if="index == 7">
-                      <div class="cell">
-                        {{ statistics[index].project }}
-                      </div>
-                    </td>
-                    <td v-if="index == 8">
-                      <div class="cell">
-                        {{ statistics[index].project }}
+                        &nbsp;{{ statistics[index] ? statistics[index][0] : '' }}
                       </div>
                     </td>
                     <td>
                       <div class="cell">
-                        {{ statistics[index].periodOpeningBalance }}
+                        {{ statistics[index] ? statistics[index][1] : '' }}
                       </div>
                     </td>
                     <td>
                       <div class="cell">
-                        {{ statistics[index].newChanges }}
+                        {{ statistics[index] ? statistics[index][2] : '' }}
                       </div>
                     </td>
                     <td>
-                      <div class="cell" :class="statistics[index].endOfTotal >= 0 ? 'colorRed' : 'colorGreen'">
-                        {{ statistics[index].yearOpeningBalance }}
+                      <div class="cell" :class="statistics[index][4] >= 0 ? 'colorRed' : 'colorGreen'">
+                        {{ statistics[index] ? statistics[index][3] : '' }}
                       </div>
                     </td>
+                    <!--<td v-if="index == 0">
+                     <div class="cell">
+                       &nbsp;{{ statistics[index].project }}
+                     </div>
+                   </td>
+                   <td v-if="index == 1">
+                     <div class="cell">
+                       &nbsp;{{ statistics[index].project }}
+                     </div>
+                   </td>
+                   <td v-if="index == 2">
+                     <div class="cell">
+                       {{ statistics[index].project }}
+                     </div>
+                   </td>
+                   <td v-if="index == 3">
+                     <div class="cell">
+                       {{ statistics[index].project }}
+                     </div>
+                   </td>
+                   <td v-if="index == 4">
+                     <div class="cell">
+                       {{ statistics[index].project }}
+                     </div>
+                   </td>
+                   <td v-if="index == 5">
+                     <div class="cell">
+                       {{ statistics[index].project }}
+                     </div>
+                   </td>
+                   <td v-if="index == 6">
+                     <div class="cell">
+                       {{ statistics[index].project }}
+                     </div>
+                   </td>
+                   <td v-if="index == 7">
+                     <div class="cell">
+                       {{ statistics[index].project }}
+                     </div>
+                   </td>
+                   <td v-if="index == 8">
+                     <div class="cell">
+                       {{ statistics[index].project }}
+                     </div>
+                   </td>
+                  <td>
+                     <div class="cell">
+                       {{ statistics[index].periodOpeningBalance }}
+                     </div>
+                   </td>
+                   <td>
+                     <div class="cell">
+                       {{ statistics[index].newChanges }}
+                     </div>
+                   </td>
+                   <td>
+                     <div class="cell" :class="statistics[index].endOfTotal >= 0 ? 'colorRed' : 'colorGreen'">
+                       {{ statistics[index].yearOpeningBalance }}
+                     </div>
+                   </td>-->
                     <!--<td>
                       <div class="cell">
                         {{ formatContent(statistics[index].yearOpeningBalance) }}
@@ -173,8 +157,10 @@
         active_user:[],
         info_send_user:[],
         cumulate_wxkh_in_2016:[],
+        preTransactionDate:'',
+        preTransactionDate2:'',
         //dataSetId: 'c7e3d3d3-4892-4642-921f-27f7e2554ef6', /* Development */
-        dataSetId: 'ee311aea-1d9b-487f-95ee-632c22ceae73', /* Production */
+        dataSetId: 'cd0a8652-6255-4925-9cfd-5482e529c878', /* Production */
         dataSetTableName: '',
         dateSetFields: [],
         codeNameDate:'',
@@ -187,19 +173,7 @@
 
         fullscreenLoading: false,
 
-        /*pickerOptions: {
-         disabledDate(time) {
-         return (time.getTime() < self.minDate) || (time.getTime() > self.maxDate)
-         },
-         onPick(aDateObj) {
-         self.dateRange = [
-         moment(aDateObj.minDate).format('YYYY-MM-DD'),
-         moment(aDateObj.maxDate).format('YYYY-MM-DD')
-         ]
-         }
-         },*/
-
-        statistics: [
+        /*statistics: [
           {
             project: '总关注用户数',
             type: '无资料报案件数',
@@ -272,22 +246,34 @@
             endOfTotal: 0,
             yearOpeningBalance: 0
           }
+        ]*/
+
+        statistics: [
+          ['总关注用户数'],
+          ['日新增用户数'],
+          ['日取消用户数'],
+          ['日净增关注用户数'],
+          ['总绑定用户数'],
+          ['日绑定用户数'],
+          ['日活跃用户数'],
+          ['日消息提醒发送人数'],
+          ['年度累计微信开户数']
         ]
       }
     },
     methods: {
-      async fetchFilterListByFieldName(aFieldName) {
+      /*async fetchFilterListByFieldName(aFieldName) {
         const self = this
 
         const codeName = self.getFieldCodeNameByFieldName(aFieldName)
 
         const data = await post(`/mort/analysis-result/sql`, {
           'dataSetId': self.dataSetId,
-          'sql': `select ${codeName} from ${self.dataSetTableName} where to_date(${self.codeNameDate}) = to_date(preTransactionDay(1)) group by ${codeName}`
+          'sql': `select ${codeName} from ${self.dataSetTableName} where ${self.codeNameDate} = '${self.preTransactionDate}' group by ${codeName}`
         })
         const data2 = await post(`/mort/analysis-result/sql`, {
           'dataSetId': self.dataSetId,
-          'sql': `select ${codeName} from ${self.dataSetTableName} where to_date(${self.codeNameDate}) = to_date(preTransactionDay(2)) group by ${codeName}`
+          'sql': `select ${codeName} from ${self.dataSetTableName} where ${self.codeNameDate} = '${self.preTransactionDate2}' group by ${codeName}`
         })
         const rows = [
           data.rows[0],
@@ -332,22 +318,96 @@
         }
         self.statistics[index].endOfTotal = sequentialValue
         self.statistics[index].yearOpeningBalance = sequentialValue + '%'
-      },
+      },*/
 
     },
     async created() {
       const self = this
+      let preTransaction = {
+        "name": "preTransactionDate",
+        "params": ["1"]
+      }
+
+      let preTransaction2 = {
+        "name": "preTransactionDate",
+        "params": ["2"]
+      }
 
       self.dataSetTableName = await get(`/mort/data-sets/${self.dataSetId}/table`)
       self.dateSetFields = await get(`/mort/data-sets/${self.dataSetId}/fields`)
+      self.preTransactionDate = await post(`/mort/function-executions`,preTransaction)
+      self.preTransactionDate2 = await post(`/mort/function-executions`,preTransaction2)
 
+      let cumulate_user = '',new_user = '',cancel_user = '',new_netgain = '',all_binding_user = '',binding_user = '',active_user = '',info_send_user = '',cumulate_wxkh_in_2016 = ''
       for(let i = 0; i < self.dateSetFields.length;i++){
         if(self.dateSetFields[i].fieldName == 'ref_date'){
           self.codeNameDate = self.dateSetFields[i].codeName
         }
+
+        if(self.dateSetFields[i].fieldName == 'cumulate_user'){
+          cumulate_user = self.dateSetFields[i].codeName
+        }
+
+        if(self.dateSetFields[i].fieldName == 'new_user'){
+          new_user = self.dateSetFields[i].codeName
+        }
+
+        if(self.dateSetFields[i].fieldName == 'cancel_user'){
+          cancel_user = self.dateSetFields[i].codeName
+        }
+
+        if(self.dateSetFields[i].fieldName == 'new_netgain'){
+          new_netgain = self.dateSetFields[i].codeName
+        }
+
+        if(self.dateSetFields[i].fieldName == 'all_binding_user'){
+          all_binding_user = self.dateSetFields[i].codeName
+        }
+
+        if(self.dateSetFields[i].fieldName == 'binding_user'){
+          binding_user = self.dateSetFields[i].codeName
+        }
+
+        if(self.dateSetFields[i].fieldName == 'active_user'){
+          active_user = self.dateSetFields[i].codeName
+        }
+
+        if(self.dateSetFields[i].fieldName == 'info_send_user'){
+          info_send_user = self.dateSetFields[i].codeName
+        }
+
+        if(self.dateSetFields[i].fieldName == 'cumulate_wxkh_in_2016'){
+          cumulate_wxkh_in_2016 = self.dateSetFields[i].codeName
+        }
       }
 
-      self.cumulate_user = await self.fetchFilterListByFieldName('cumulate_user')
+      const tradingDaydata = await post(`/mort/analysis-result/sql`, {
+        'dataSetId': self.dataSetId,
+        'sql': `select ${cumulate_user},${new_user},${cancel_user},${new_netgain},${all_binding_user},${binding_user},${active_user},${info_send_user},${cumulate_wxkh_in_2016} from ${self.dataSetTableName} where ${self.codeNameDate} = '${self.preTransactionDate}'`
+      })
+
+      const tradingDaydata2 = await post(`/mort/analysis-result/sql`, {
+        'dataSetId': self.dataSetId,
+        'sql': `select ${cumulate_user},${new_user},${cancel_user},${new_netgain},${all_binding_user},${binding_user},${active_user},${info_send_user},${cumulate_wxkh_in_2016} from ${self.dataSetTableName} where ${self.codeNameDate} = '${self.preTransactionDate2}'`
+      })
+
+      for(let i = 0; i < self.statistics.length; i++){
+        let sequentialValue = (tradingDaydata.rows[0][i] - tradingDaydata2.rows[0][i]) / tradingDaydata2.rows[0][i] * 100
+        if(!self.isInteger(sequentialValue)){
+          sequentialValue = sequentialValue.toFixed(2)
+        }
+        self.statistics[i].push(parseInt(tradingDaydata.rows[0][i]))
+        self.statistics[i].push(parseInt(tradingDaydata2.rows[0][i]))
+        self.statistics[i].push(sequentialValue + '%')
+        self.statistics[i].push(sequentialValue)
+      }
+
+      /*const data2 = await post(`/mort/analysis-result/sql`, {
+        'dataSetId': self.dataSetId,
+        'sql': `select ${codeName} from ${self.dataSetTableName} where ${self.codeNameDate} = '${self.preTransactionDate2}' group by ${codeName}`
+      })*/
+
+      /*self.cumulate_user = await self.fetchFilterListByFieldName('cumulate_user')
       self.dataSorting(self.cumulate_user,0)
       self.new_user = await self.fetchFilterListByFieldName('new_user')
       self.dataSorting(self.new_user,1)
@@ -364,7 +424,7 @@
       self.info_send_user = await self.fetchFilterListByFieldName('info_send_user')
       self.dataSorting(self.info_send_user,7)
       self.cumulate_wxkh_in_2016 = await self.fetchFilterListByFieldName('cumulate_wxkh_in_2016')
-      self.dataSorting(self.cumulate_wxkh_in_2016,8)
+      self.dataSorting(self.cumulate_wxkh_in_2016,8)*/
     },
     beforeMount() {
       const self = this
